@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% block title %}Paste #{{ paste.id }}{% endblock %}
+{% block body %}
+  <h2>Paste #{{ paste.id }}</h2>
+  <dl>
+    {% if paste.user %}
+    <dt>Author
+    <dd>{{ paste.user.display_name }}
+    {% endif %}
+    <dt>Date
+    <dd>{{ paste.pub_date.strftime('%Y-%m-%d @ %H:%M') }}
+    <dt>Actions
+    <dd>
+      <a href="{{ url_for('new_paste', reply_to=paste.id) }}">Reply</a>
+      {%- if g.user and paste.user == g.user -%}
+      , <a href="{{ url_for('delete_paste', paste_id=paste.id) }}">Delete</a>
+      {% endif %}
+    {% if paste.parent_id %}
+    <dt>In reply to
+    <dd><a href="{{ url_for('show_paste', paste_id=paste.parent_id) }}">#{{ paste.parent_id }}</a>
+    {% endif %}
+    {% if paste.children %}
+    <dt>Replies
+    <dd>
+      {% for child in paste.children -%}
+        {%- if not loop.first %},{% endif %}
+        <a href="{{ url_for('show_paste', paste_id=child.id) }}">#{{ child.id }}</a>
+      {%- endfor %}
+    {% endif %}
+  </dl>
+  <div class=code><pre>{{ paste.code }}</pre></div>
+  <script type=text/javascript>
+    pastebin.subscribePaste({{ paste.id }});
+  </script>
+{% endblock %}

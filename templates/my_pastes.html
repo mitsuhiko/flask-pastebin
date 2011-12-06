@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block title %}My Pastes{% endblock %}
+{% from '_pagination.html' import render_pagination %}
+{% block body %}
+  <h2>My Pastes</h2>
+  <ul>
+  {% for paste in pagination.items %}
+    <li><a href="{{ url_for('show_paste', paste_id=paste.id) }}">#{{ paste.id }}</a>
+      from {{ paste.pub_date.strftime('%Y-%m-%d @ %H:%M') }}
+  {% endfor %}
+  </ul>
+  {{ render_pagination(pagination) }}
+{% endblock %}

@@ -1,0 +1,4 @@
+Flask
+Flask-OAuth
+Flask-SQLAlchemy
+juggernaut

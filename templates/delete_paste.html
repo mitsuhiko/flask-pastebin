@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+{% block title %}Delete Paste #{{ paste.id }}{% endblock %}
+{% block body %}
+  <h2>Delete Paste #{{ paste.id }}</h2>
+  <form action="" method=post>
+    <p>Are you sure you want to delete the paste?  You cannot undo this.
+    <p>
+      <input type=submit name=yes value=Yes>
+      <input type=submit name=no value=No>
+  </form>
+{% endblock %}

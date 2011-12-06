@@ -1,0 +1,21 @@
+body          { margin: 0; padding: 0; }
+body, input   { font-size: 16px; font-family: 'Helvetica Neue', sans-serif; }
+.page         { margin: 50px auto; width: 740px; }
+h1            { margin: 0; font-weight: normal; color: #c00; }
+a             { color: black; }
+a:hover       { color: #c00; }
+.nav          { margin: 0 0 20px 0; list-style: none; padding: 0; }
+.nav li       { display: inline; }
+.nav li + li:before { content: " // "; }
+h2            { font-weight: normal; margin: 0; }
+dl            { overflow: auto; font-size: 14px; }
+dl dt         { font-weight: bold; width: 90px; float: left;
+                clear: left; }
+dl dd         { float: left; margin: 0; padding: 0; }
+pre, textarea { font-family: 'Consolas', monospace; font-size: 14px;
+                background: #eee; padding: 0; margin: 0; }
+textarea      { border: none; width: 720px; }
+.code, .flash { background: #eee; margin: 10px -30px; padding: 10px 30px; }
+.pagination strong,
+.pagination span.ellipsis,
+.pagination a { border: 1px solid #d00; padding: 2px 6px; text-decoration: none; }
