@@ -15,7 +15,7 @@
   How to use it?
 
     1. make a virtualenv
-    2. ``pip install -r requirements.rst``
+    2. ``pip install -r requirements.txt``
     3. ``python manage.py initdb``
     4. ``python manage.py runserver``
 
